@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<!-- Spring 1일차 - 셋팅 -->
+<title>Spring 2일차 - 팝업창을 이용한 코드 입력 (popup.html 연동)</title>
+<script>
+	//팝업창에 상품 리스트 출력
+	//window.open("팝업을 띄울 파일명", "_self || _blank || _top", "사이즈 및 팝업창 구조")
+	//_top 최상위 팝업위치
+	function pop_list(){
+		window.open("./popup.html", "", "width=200 height=200");
+	}
+	function save_post(){
+		if(f.pdcode.value == ""){
+			alert("상품을 검색하여 해당 상품을 선택해 주세요")
+		}else{
+			f.submit(); //backend 전송
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<form id="f" method="post" action="./spring01ok.do">	
+		상품코드 : <input type="text" name="pdcode" readonly><br>
+		상품명 : <input type="text" name="pdname" readonly><br>
+		<input type="button" value="상품검색" onclick="pop_list()"><br>
+		<input type="button" value="전송" onclick="save_post()">
+	</form>
+</body>
+</html>

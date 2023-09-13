@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>상품 리스트 팝업창 (자식창) (spring01.html 연동)</title>
+<script>
+	/* 필수 form 
+	 window.opener : 부모창
+	*/
+	function in_product(pdno,pdnm){
+		//console.log(pdno + " " + pdnm);
+		window.opener.f.pdcode.value = pdno;
+		window.opener.f.pdname.value = pdnm;
+		self.close();
+	}
+</script>
+</head>
+<body>
+	<p>상품 리스트</p>
+	<ul>
+		<li onclick="in_product('01234','모니터')" >01234 - 모니터</li>
+		<li onclick="in_product('01235','키보드')" >01235 - 키보드</li>
+		<li onclick="in_product('01236','마우스')" >01236 - 마우스</li>
+		<li onclick="in_product('01237','CPU')" >01237 - CPU</li>
+		<li onclick="in_product('01238','메모리')" >01238 - 메모리</li>
+	</ul>
+</body>
+</html>

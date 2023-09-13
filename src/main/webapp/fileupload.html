@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Spring 파일 업로드 기능 + ECMAScript(ES)</title>
+</head>
+<body>
+	<form id="frm" method="post" action="./fileok.do" enctype="multipart/form-data">
+		파일첨부 : <input type="file" name="mfile"><br>
+		<input type="button" value="파일전달" class="btn">
+	</form>
+<!-- ES5, ES6 -->
+<script>
+	/*
+	document.querySelector("#id")
+	document.querySelector(".class")
+	addEventListener (이벤트를 핸들링하는 함수)
+	reset, click, change, submit, load, keydown, keyup, keypress,
+	mouseover, mouseenter, mouseup, mouseout, mousemove
+	*/
+	document.querySelector(".btn").addEventListener("click",function(){
+		if(frm.mfile.value == ""){
+			alert("파일 첨부를 해 주셔야 합니다.");
+		}else{
+			frm.submit();
+		}
+	});
+</script>
+</body>
+</html>

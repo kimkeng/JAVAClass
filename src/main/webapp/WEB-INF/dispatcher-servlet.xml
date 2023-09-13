@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		
+		http://www.springframework.org/schema/mvc
+		https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		">
+
+	<bean id="/index.do" class="sp1.index"/>  
+	<!-- InternalResourceViewResolver : Controller에서 viewpage를 로드할 때 경로 및 파일 속성 미리 셋팅하는 공간 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
+	<!-- 요청한 파일만 Tomcat에서 사용될 수 있도록 spring-mvc에서 조절함 -->
+	<mvc:resources location="/" mapping="/**"></mvc:resources>
+	<!--
+	<mvc:resources location="/" mapping="/*.html"></mvc:resources>
+	<mvc:resources location="/" mapping="/*.js"></mvc:resources>
+	<mvc:resources location="/" mapping="/*.css"></mvc:resources>
+	-->
+</beans>

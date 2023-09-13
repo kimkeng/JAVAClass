@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Spring 2일차 - checkbox 핸들링</title>
+</head>
+<body>
+	<form id="f" method="post" action="./spring02ok.do">
+		메일 수신(선택) : <input type="checkbox" name="mail" value="Y">동의<br>
+		<input type="button" value="전송" onclick="agree()"><br>
+		광고 수신 SMS (선택) : <input type="radio" name="ad" value="Y" checked>동의<br>
+		<input type="radio" name="ad" value="N">비동의<br>
+	</form>
+</body>
+<script>
+	function agree(){
+		f.submit();
+	}
+</script>
+</html>
